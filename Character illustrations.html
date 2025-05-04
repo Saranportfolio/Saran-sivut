@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="En">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Art Portfolio</title>
+    <link rel="stylesheet" type="text/css" href="illustrations.css">
+</head>
+
+<body>
+
+    <div class="main">
+        <div class="main_container">
+        <h1><span>My work</span></h1>
+
+            <ul>
+                <li><a href="Sarasportfoliofrontpage.html">Contact</a></li>
+                <li><a class="active"  href="art.html">My work</a></li>
+     
+             </ul>
+            </div>
+          <div class="content">
+            
+               <h1><span>Character illustrations</span></h1><div class="textbox">
+                 <br> <p>A selection of character-focused pieces showcasing a range of styles and moods.
+                   I enjoy exploring different rendering methods and stylizations depending on the concept, emotion, or project. Whether it's cel-shaded, painterly, or sketch-based, I focus on personality and storytelling through expression, design, and pose.
+               </p>
+            </div>
+            <br> <br>
+       
+                <div class ="projectaustat">
+                  <img class="thumbnail" src="Kuvat/art/illustrations/1.png" alt="Art 1">
+                  <img class="thumbnail" src="Kuvat/art/illustrations/9.png" alt="Art 2">
+                  <img class="thumbnail" src="Kuvat/art/illustrations/8.png" alt="Art 3">
+                  <img class="thumbnail" src="Kuvat/art/illustrations/6.png" alt="Art 4">
+                  <img class="thumbnail" src="Kuvat/art/illustrations/5.png" alt="Art 5">
+                  <img class="thumbnail" src="Kuvat/art/illustrations/7.png" alt="Art 6">
+                  <img class="thumbnail" src="Kuvat/art/illustrations/3.png" alt="Art 7">
+                  <img class="thumbnail" src="Kuvat/art/illustrations/2.png" alt="Art 8">
+                  <img class="thumbnail" src="Kuvat/art/illustrations/4.png" alt="Art 9">
+
+                  <div id="myModal" class="modal">
+                     <span class="close">&times;</span>
+                     <img class="modal-content" id="img01">
+                     <div id="caption"></div>
+                   </div>
+
+        </div>
+
+       
+    
+    </div>
+
+    <script>
+      const modal = document.getElementById("myModal");
+      const modalImg = document.getElementById("img01");
+      const captionText = document.getElementById("caption");
+      const closeBtn = document.getElementsByClassName("close")[0];
+    
+      const thumbnails = document.querySelectorAll(".thumbnail");
+      const images = Array.from(thumbnails).map(img => ({
+        src: img.src,
+        alt: img.alt
+      }));
+    
+      let currentIndex = 0;
+    
+      thumbnails.forEach((thumb, index) => {
+        thumb.addEventListener("click", () => {
+          currentIndex = index;
+          showImage(currentIndex);
+          modal.style.display = "block";
+        });
+      });
+    
+      function showImage(index) {
+        modalImg.src = images[index].src;
+        captionText.innerHTML = images[index].alt;
+      }
+    
+      modalImg.addEventListener("click", () => {
+        currentIndex = (currentIndex + 1) % images.length;
+        showImage(currentIndex);
+      });
+    
+      closeBtn.onclick = function () {
+        modal.style.display = "none";
+      };
+    
+      window.onclick = function (event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      };
+    </script>
+ 
+      
+
+</body>

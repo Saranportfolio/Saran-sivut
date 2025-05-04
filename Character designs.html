@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="En">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Art Portfolio</title>
+    <link rel="stylesheet" type="text/css" href="design.css">
+</head>
+
+<body>
+
+    <div class="main">
+        <div class="main_container">
+        <h1><span>My work</span></h1>
+
+            <ul>
+                <li><a href="Sarasportfoliofrontpage.html">Contact</a></li>
+                <li><a class="active"  href="art.html">My work</a></li>
+     
+             </ul>
+            </div>
+          <div class="content">
+            
+               <h1><span>Character designs / <br> Colour variations</span></h1><div class="textbox">
+                 <br> <p> A collection of character design explorations, with emphasis on outfits, and overall personality. Some designs include alternate color palettes to explore visual direction.
+               </p>
+            </div>
+            <br> <br>
+       
+                <div class ="projectaustat">
+                  <img class="thumbnail" src="Kuvat/art/Character design/1.png" alt="Art 1">
+                  <img class="thumbnail" src="Kuvat/art/Character design/2.png" alt="Art 2">
+                  <img class="thumbnail" src="Kuvat/art/Character design/3.png" alt="Art 3">
+                  <img class="thumbnail" src="Kuvat/art/Character design/4.png" alt="Art 4">
+                  <img style="margin-left: 240px; width: 500px;"class="thumbnail" src="Kuvat/art/Character design/5.png"alt="Art 5">
+       
+
+
+                  <div id="myModal" class="modal">
+                     <span class="close">&times;</span>
+                     <img class="modal-content" id="img01">
+                     <div id="caption"></div>
+                   </div>
+
+        </div>
+
+       
+    
+    </div>
+
+    <script>
+      const modal = document.getElementById("myModal");
+      const modalImg = document.getElementById("img01");
+      const captionText = document.getElementById("caption");
+      const closeBtn = document.getElementsByClassName("close")[0];
+    
+      const thumbnails = document.querySelectorAll(".thumbnail");
+      const images = Array.from(thumbnails).map(img => ({
+        src: img.src,
+        alt: img.alt
+      }));
+    
+      let currentIndex = 0;
+    
+      thumbnails.forEach((thumb, index) => {
+        thumb.addEventListener("click", () => {
+          currentIndex = index;
+          showImage(currentIndex);
+          modal.style.display = "block";
+        });
+      });
+    
+      function showImage(index) {
+        modalImg.src = images[index].src;
+        captionText.innerHTML = images[index].alt;
+      }
+    
+      modalImg.addEventListener("click", () => {
+        currentIndex = (currentIndex + 1) % images.length;
+        showImage(currentIndex);
+      });
+    
+      closeBtn.onclick = function () {
+        modal.style.display = "none";
+      };
+    
+      window.onclick = function (event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      };
+    </script>
+ 
+      
+
+</body>

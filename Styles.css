@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+
+body {
+    font-family: "Nunito";
+  
+    color: black;
+  
+    background-color: #7b6e6e;
+
+    background-image: url(Kuvat/Background/ekan\ tausta.PNG);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: right bottom; 
+ 
+  
+  }
+
+  .main {
+    margin: auto;
+    width: 70%;
+  }
+  @media only screen and (max-width: 100px) {
+    .main {
+      margin: auto;
+      width: 100%;
+    }
+  }
+  @media only screen and (min-width: 3500px) {
+    .main {
+      margin: auto;
+      width: 50%;
+    }
+
+  
+  }
+  .main_container {
+
+    overflow: auto;
+    margin: auto;
+    width: 80%;
+    text-align: center;
+    background-color: #a79c9c;
+  
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+    margin-bottom: 10px;
+
+
+  }
+
+  h1 span {
+
+    color: black;
+    font-size: 100px;
+  }
+
+  ul {
+  list-style: none;
+  display: inline-block;
+  text-align: center;
+  font-weight: bold;
+  padding: 0px;
+
+    /* border: 5px solid black */
+  background-color: #a79c9c;
+  }
+
+
+li {
+  font-size: 40px;
+  
+  float: left;
+  
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #ddd;
+}
+
+li a.active {
+  color: white;
+  background-color: black;
+}
+
+.content {
+  float: middle;
+  width: 100%;
+
+  border-width: 25px;
+  margin-bottom: 25px;
+  font-size: large;
+
+  margin: auto;
+  width: 80%;
+  text-align: center;
+  background-color: #a79c9c;
+
+  border-style: solid;
+  border-width: 2px;
+  border-color: black;
+  margin-bottom: 10px;
+}
+p
+{
+  font-size: 50px;
+}
+
+.thumpnail {
+  width: 250px;
+  border-radius: 10px;
+  margin: auto;
+  display: block;
+  float: left;
+  padding: 0px;
+}
+a:link {
+  color: black;
+  text-decoration: none;
+}
